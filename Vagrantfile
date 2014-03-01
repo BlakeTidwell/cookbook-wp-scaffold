@@ -63,6 +63,9 @@ Vagrant.configure("2") do |config|
         :server_debian_password => '9237e4cd4030be8c4b45c7972e5eeb8a',
         :server_repl_password => '9237e4cd4030be8c4b45c7972e5eeb8a'
       },
+      :wp_scaffold => {
+        :admin_email => 'test@test.com'
+      },
       :minitest => {
         # Currently only tests WP Scaffold,
         # primarily due to the fact that the tests
