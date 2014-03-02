@@ -6,6 +6,6 @@ end
 metadata
 
 cookbook "wordpress", "~> 1.2.0"
-# cookbook "wp-cli", git: "git@github.com:BlakeTidwell/cookbook-wp-cli.git"
+cookbook "composer"
+# cookbook "wp-cli", github: "BlakeTidwell/cookbook-wp-cli"
 cookbook "wp-cli", path: "#{ENV['HOME']}/Code/ops_workspace/cookbooks/wp-cli"
-cookbook "composer", git: "git@github.com:zircote/chef-composer.git"
