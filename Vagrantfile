@@ -64,7 +64,12 @@ Vagrant.configure("2") do |config|
         :server_repl_password => '9237e4cd4030be8c4b45c7972e5eeb8a'
       },
       :wp_scaffold => {
-        :admin_email => 'test@test.com'
+        # Can also override admin name and pass
+        :admin_email => 'test@test.com',
+        :plugins => {
+          # :include => []
+          # :exclude => []
+        }
       },
       :minitest => {
         # Currently only tests WP Scaffold,
