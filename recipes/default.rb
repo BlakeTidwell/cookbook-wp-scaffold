@@ -2,7 +2,7 @@
 # Cookbook Name:: wp-scaffold
 # Recipe:: default
 #
-# Copyright (C) 2014 YOUR_NAME
+# Copyright (C) 2014 Blake Tidwell
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -34,7 +34,16 @@ if !node['wp_scaffold']['plugins']['include'].empty?
     end
   end
 elsif !node['wp_scaffold']['plugins']['exclude'].empty?
-  puts "Install except for specific list"
+  log "Install except for specific list"
 else
-  puts "Do not install any plugins"
+  log "Do not install any plugins"
+end
+
+theme = node['wp_scaffold']['theme']
+
+if !theme.empty?
+  log "Installing theme #{theme}"
+  wp_activate theme do
+    type :theme
+  end
 end
