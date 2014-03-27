@@ -28,7 +28,8 @@ end
 
 if !node['wp_scaffold']['plugins']['include'].empty?
   node['wp_scaffold']['plugins']['include'].each do |plugin|
-    wp_plugin plugin
+    log "Installing #{plugin}"
+    wp_plugin_activate plugin
   end
 elsif !node['wp_scaffold']['plugins']['exclude'].empty?
   puts "Install except for specific list"
