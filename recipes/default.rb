@@ -11,6 +11,12 @@ include_recipe "wordpress::default"
 include_recipe "composer::default"
 include_recipe "wp-cli::default"
 
+composer_project "#{node['wordpress']['dir']}" do
+  dev false
+  quiet true
+  action :install
+end
+
 wp_core_install do
     url node['fqdn']
     title node['wp_scaffold']['title']
